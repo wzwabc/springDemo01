@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inspur.tax.dao.BonusMapper">
+
+	<resultMap type="com.inspur.tax.data.Bonus" id="bonusmap">
+		<id property="id" column="ID"/>
+		<result property="wage" column="WAGE"/>
+		<result property="bonus" column="WAGE"/>
+		<result property="optYearBonus" column="opt_year_bonus"/>
+		<result property="optMonth1Bonus" column="opt_month1_bonus"/>
+		<result property="optMonth2Bonus" column="opt_month2_bonus"/>
+		<result property="realTotalBonus" column="real_total_bonus"/>
+		<result property="tax" column="Tax"/>
+	</resultMap>
+  
+	<insert id="addBonus" parameterType="com.inspur.tax.data.Bonus">
+		INSERT BONUS
+		(ID,WAGE,BONUS,REAL_TOTAL_BONUS,OPT_YEAR_BONUS,OPT_MONTH1_BONUS,OPT_MONTH2_BONUS,TAX)
+		VALUES
+		(#{id},#{wage},#{bonus},#{realTotalBonus},#{optYearBonus},#{optMonth1Bonus},
+		#{optMonth2Bonus},#{tax}
+		)
+	</insert>
+	
+	<select id="findAll" resultMap="bonusmap">
+		SELECT 
+		ID,WAGE,BONUS,REAL_TOTAL_BONUS,OPT_YEAR_BONUS,OPT_MONTH1_BONUS,OPT_MONTH2_BONUS,TAX
+		FROM BONUS
+	</select>
+	
+</mapper>

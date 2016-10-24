@@ -1,0 +1,13 @@
+table {
+	border: 2px solid #ddd;
+	width: 700px;
+	height: 100%;
+	margin: auto;
+}
+td {
+	border: 1px solid #ddd;
+	height: 50px;
+}
+	.a, .b, .c {
+	display: none;
+}
